@@ -1,3 +1,6 @@
+'''Written By Khaled Mohamed 
+Artificial Intelligence  CS361'''
+
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5 import QtGui
@@ -27,8 +30,6 @@ class MainApp(QWidget):
         self.test_button = QPushButton("Start Color Detection Cam")
         self.test_button.clicked.connect(self.color_detect)
 
-
-
         self.main_layout = QVBoxLayout()
         self.main_layout.addWidget(self.image_label)
         self.main_layout.addWidget(self.start_button)
@@ -36,6 +37,8 @@ class MainApp(QWidget):
         self.main_layout.addWidget(self.quit_button)
 
         self.setLayout(self.main_layout)
+
+
 
     def setup_camera(self):
         self.capture = cv2.VideoCapture(0)
@@ -45,7 +48,6 @@ class MainApp(QWidget):
         self.timer = QTimer()
         self.timer.timeout.connect(self.display_video_stream)
         self.timer.start(100)
-
 
 
 
@@ -103,8 +105,6 @@ class MainApp(QWidget):
 
         camera.release()
         cv2.destroyAllWindows()
-
-
 
 
 
